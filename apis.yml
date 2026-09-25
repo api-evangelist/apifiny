@@ -1,23 +1,67 @@
 aid: apifiny
+
 name: Apifiny
-description: 'Apifiny is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Apifiny provides liquidity and market making services for digital asset exchanges, offering a suite of APIs that enable trading, order management, and market data access. The company focuses on bridging traditional finance infrastructure with the crypto ecosystem, delivering robust, low-latency connectivity for institutional clients. Through partnerships with major exchanges, Apifiny facilitates seamless integration, risk management, and compliance tools, empowering firms to launch and operate digital asset markets efficiently.'
+
 url: https://raw.githubusercontent.com/api-evangelist/apifiny/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
-- Company
-apis: []
+- Market Making
+- Liquidity Provisioning
+- Partner Platforms
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/apifiny-hosts.yml
+- type: Vendors
+  url: vendors/apifiny-vendors.yml
+- type: SDKs
+  url: packages/apifiny-packages.yml
+- type: Packages
+  url: packages/apifiny-packages.yml
+- type: Documentation
+  url: https://doc.apifiny.com/
+- type: DomainSecurity
+  url: security/apifiny-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/apifiny_stock/
+  url: https://apifiny.com/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Documentation endpoint returns only an anti-abuse JSON message, no OpenAPI or other spec.
+  evidence:
+    - url: https://doc.apifiny.com
+      status: 200
+    - url: https://api.apifiny.com/openapi.json
+      status: 0
+    - url: https://apifiny.com/openapi.json
+      status: 404
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

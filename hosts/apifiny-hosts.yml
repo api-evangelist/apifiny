@@ -1,0 +1,60 @@
+generated: '2026-09-25'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 3
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - docs
+  - other
+  - website
+hosts:
+- host: api.apifiny.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: apifiny.com
+  role: api
+  relation: own
+- host: apifiny.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: apifiny.com
+  role: website
+  relation: own
+- host: doc.apifiny.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: apifiny.com
+  role: docs
+  relation: own
+- host: forgeglobal.com
+  found_by:
+  - vendor-detect
+  types: []
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: forgeglobal.com
+  role: other
+  relation: platform

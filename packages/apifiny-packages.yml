@@ -1,0 +1,15 @@
+generated: '2026-09-25'
+method: probed
+generator: harvest-packages.py
+source: registry metadata endpoints (registry.npmjs.org, pypi.org, rubygems.org, api.nuget.org, packagist.org, crates.io)
+ownership_rule: 'official: true only when the registry metadata (homepage, repository, author, URLs) names the provider''s domain (apifiny.com,
+  forgeglobal.com, security/apifiny-domain-security.yml) or its accepted GitHub org.'
+packages:
+- name: apifiny
+  registry: pypi
+  url: https://pypi.org/project/apifiny/
+  language: Python
+  official: true
+  version: 1.2.1
+  published: '2022-07-15'
+  evidence: metadata names apifiny.com
